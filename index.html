@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADICOM.KZ — Инструменты, профили и комплектующие для натяжных потолков</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="brand-box">
+        <div class="brand-logo">ADICOM<span>.KZ</span></div>
+        <div class="brand-desc">Профили · Инструмент · Газовое оборудование · Шымкент</div>
+      </div>
+      <div class="nav-contacts">
+        <a href="tel:+77076807147" class="phone-link">+7 (707) 680-71-47</a>
+        <a href="#invoice-panel" class="invoice-pill">
+          Накладная: <strong id="nav-items">0</strong> шт. | <strong id="nav-sum">0 ₸</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-wrap">
+    <!-- КАЛЬКУЛЯТОР ОБЪЕКТА -->
+    <section class="pro-calc">
+      <div class="calc-title-row">
+        <h2>Инженерный калькулятор объекта ADICOM</h2>
+        <span class="tag-pro">Для монтажников и прорабов</span>
+      </div>
+      <div class="calc-form-grid">
+        <div class="input-group">
+          <label for="c-perim">Периметр помещения (м.п.)</label>
+          <input type="number" id="c-perim" min="1" placeholder="Например: 22">
+        </div>
+        <div class="input-group">
+          <label for="c-profile">Тип профиля по периметру</label>
+          <select id="c-profile">
+            <option value="PRF-SHD">Теневой профиль (1 250 ₸/м)</option>
+            <option value="PRF-FLY">Парящий профиль (1 300 ₸/м)</option>
+            <option value="PRF-PL75">ПЛ-75 переход уровня (3 950 ₸/м)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="c-track">Магнитный трек / LED-лента (м.п.)</label>
+          <input type="number" id="c-track" min="0" placeholder="Например: 6">
+        </div>
+        <div class="input-group">
+          <label for="c-rings">Закладные / кольца под свет (шт.)</label>
+          <input type="number" id="c-rings" min="0" placeholder="Например: 8">
+        </div>
+        <button type="button" id="run-calc" class="btn-yellow">Сформировать комплект</button>
+      </div>
+    </section>
+
+    <div class="content-columns">
+      <!-- КАТАЛОГ ТОВАРОВ И ИНСТРУМЕНТОВ -->
+      <section class="catalog-section">
+        <div class="filter-bar">
+          <div class="cat-buttons" id="cat-buttons">
+            <button class="cat-btn active" data-cat="all">Все позиции</button>
+            <button class="cat-btn" data-cat="tools">Инструменты и газ</button>
+            <button class="cat-btn" data-cat="profiles">Профили и гардины</button>
+            <button class="cat-btn" data-cat="light">Треки и подсветка</button>
+            <button class="cat-btn" data-cat="consumables">Кольца, платформы, вставки</button>
+          </div>
+          <input type="text" id="find-input" class="find-input" placeholder="Поиск: пистолет, баллон, профиль...">
+        </div>
+
+        <div class="items-grid" id="items-grid"></div>
+      </section>
+
+      <!-- ПРАВАЯ КОЛОНКА: НАКЛАДНАЯ -->
+      <aside class="invoice-section" id="invoice-panel">
+        <div class="invoice-box">
+          <div class="invoice-top">
+            <h3>Смета / Накладная</h3>
+            <button type="button" id="wipe-cart" class="clear-link">Очистить</button>
+          </div>
+
+          <div id="invoice-list" class="invoice-list">
+            <div class="empty-state">Выберите инструменты или комплектующие из каталога слева.</div>
+          </div>
+
+          <div class="invoice-totals">
+            <div class="tot-line">
+              <span>Позиций в накладной:</span>
+              <strong id="tot-positions">0</strong>
+            </div>
+            <div class="tot-line grand">
+              <span>Итого по прайсу:</span>
+              <strong id="tot-money">0 ₸</strong>
+            </div>
+          </div>
+
+          <form id="send-invoice-form" class="send-form">
+            <input type="text" id="buyer-name" placeholder="Имя мастера / компании *" required>
+            <input type="tel" id="buyer-phone" placeholder="Ваш телефон (+7 7XX...) *" required>
+            
+            <label class="small-label">Выберите менеджера ADICOM (Шымкент):</label>
+            <select id="manager-select">
+              <option value="77076807147">Менеджер 1 (+7 707 680-71-47)</option>
+              <option value="77026642547">Менеджер 2 (+7 702 664-25-47)</option>
+              <option value="77052145442">Менеджер 3 (+7 705 214-54-42)</option>
+            </select>
+
+            <select id="delivery-type">
+              <option value="Самовывоз: мкр Самал 3, ул. Алтынкорган 58/05">Самовывоз (мкр Самал 3, Алтынкорган 58/05)</option>
+              <option value="Доставка по городу Шымкент">Доставка по г. Шымкент</option>
+              <option value="Отправка в другой регион">Отправка в регионы РК</option>
+            </select>
+
+            <button type="submit" class="btn-wa">Отправить заказ в WhatsApp ↗</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
